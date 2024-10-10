@@ -7,12 +7,43 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="43dp"
+        android:text="Welcome to the Country Flags Game!"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnCountryGame"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnCountryGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="19dp"
+        android:text="Country Game"
+        app:layout_constraintBottom_toTopOf="@+id/btnNewCountryGame"
+        app:layout_constraintStart_toStartOf="@+id/btnNewCountryGame" />
+
+    <Button
+        android:id="@+id/btnAbout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="17dp"
+        android:text="About"
+        app:layout_constraintStart_toStartOf="@+id/btnNewCountryGame"
+        app:layout_constraintTop_toBottomOf="@+id/btnNewCountryGame" />
+
+    <Button
+        android:id="@+id/btnNewCountryGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="276dp"
+        android:text="New Country Game"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
