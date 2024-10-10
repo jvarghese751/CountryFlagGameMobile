@@ -34,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Placeholder code for About
                 Toast.makeText(MainActivity.this, "About Information Displayed", Toast.LENGTH_SHORT).show();
+                AboutFragment aboutFragment = new AboutFragment();
+
+                getSupportFragmentManager().beginTransaction().replace(android.R.id.content, aboutFragment).addToBackStack(null).commit();
             }
         });
 

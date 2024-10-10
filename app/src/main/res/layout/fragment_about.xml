@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutFragment">
+
+    <TextView
+        android:id="@+id/aboutTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Student ID: B00879477 Student Name: Joel Varghese. I confirm that I understand what plagiarism is and have read the University’s policy on plagiarism and understand the definition of plagiarism. The work that I have submitted is entirely my own. Any work from other authors is duly referenced and acknowledged. I understand that I may face sanctions in accordance with the policies and procedures of the University. "
+        android:textSize="20sp" />
+</FrameLayout>
