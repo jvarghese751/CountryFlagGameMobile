@@ -35,26 +35,26 @@ public class GuessCountryActivity extends AppCompatActivity {
 
         countryFlagMap = new HashMap<>();
         countryFlagMap.put("Algeria", R.drawable.Algeria);
-        countryFlagMap.put("Australia", R.drawable.Australia);
-        countryFlagMap.put("Belgium", R.drawable.Belgium);
-        countryFlagMap.put("Brazil", R.drawable.Brazil);
-        countryFlagMap.put("Canada", R.drawable.Canada);
-        countryFlagMap.put("Colombia", R.drawable.Colombia);
-        countryFlagMap.put("Croatia", R.drawable.Croatia);
-        countryFlagMap.put("Denmark", R.drawable.Denmark);
-        countryFlagMap.put("Egypt", R.drawable.Egypt);
-        countryFlagMap.put("Finland", R.drawable.Finland);
-        countryFlagMap.put("France", R.drawable.France);
-        countryFlagMap.put("Germany", R.drawable.Germany);
-        countryFlagMap.put("Greece", R.drawable.Greece);
-        countryFlagMap.put("Portugal", R.drawable.Portugal);
-        countryFlagMap.put("Singapore", R.drawable.Singapore);
-        countryFlagMap.put("Spain", R.drawable.Spain);
-        countryFlagMap.put("Sweden", R.drawable.Sweden);
-        countryFlagMap.put("Switzerland", R.drawable.Switzerland);
-        countryFlagMap.put("Turkey", R.drawable.Turkey);
-        countryFlagMap.put("Ukraine", R.drawable.Ukraine);
-        countryFlagMap.put("Zimbabwe", R.drawable.Zimbabwe);
+        countryFlagMap.put("Australia", R.drawable.australia);
+        countryFlagMap.put("Belgium", R.drawable.belgium);
+        countryFlagMap.put("Brazil", R.drawable.brazil);
+        countryFlagMap.put("Canada", R.drawable.canada);
+        countryFlagMap.put("Colombia", R.drawable.colombia);
+        countryFlagMap.put("Croatia", R.drawable.croatia);
+        countryFlagMap.put("Denmark", R.drawable.denmark);
+        countryFlagMap.put("Egypt", R.drawable.egypt);
+        countryFlagMap.put("Finland", R.drawable.finland);
+        countryFlagMap.put("France", R.drawable.france);
+        countryFlagMap.put("Germany", R.drawable.germany);
+        countryFlagMap.put("Greece", R.drawable.greece);
+        countryFlagMap.put("Portugal", R.drawable.portugal);
+        countryFlagMap.put("Singapore", R.drawable.singapore);
+        countryFlagMap.put("Spain", R.drawable.spain);
+        countryFlagMap.put("Sweden", R.drawable.sweden);
+        countryFlagMap.put("Switzerland", R.drawable.switzerland);
+        countryFlagMap.put("Turkey", R.drawable.turkey);
+        countryFlagMap.put("Ukraine", R.drawable.ukraine);
+        countryFlagMap.put("Zimbabwe", R.drawable.zimbabwe);
 
         getRandomFlag();
 
