@@ -1,6 +1,8 @@
 package com.example.countryflaggamemobiletech;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
@@ -18,7 +20,8 @@ public class NewCountryGameActivity extends AppCompatActivity {
         btnAdvancedLevel = findViewById(R.id.btnAdvancedLevel);
 
         btnGuessCountry.setOnClickListener(v -> {
-            Toast.makeText(NewCountryGameActivity.this, "Guess the Country Selected", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(NewCountryGameActivity.this, GuessCountryActivity.class);
+            startActivity(intent);
         });
 
         btnGuessHints.setOnClickListener(v -> {
