@@ -34,7 +34,7 @@ public class GuessCountryActivity extends AppCompatActivity {
         submitGuessButton = findViewById(R.id.submitGuessButton);
 
         countryFlagMap = new HashMap<>();
-        countryFlagMap.put("Algeria", R.drawable.Algeria);
+        countryFlagMap.put("Algeria", R.drawable.algeria);
         countryFlagMap.put("Australia", R.drawable.australia);
         countryFlagMap.put("Belgium", R.drawable.belgium);
         countryFlagMap.put("Brazil", R.drawable.brazil);
