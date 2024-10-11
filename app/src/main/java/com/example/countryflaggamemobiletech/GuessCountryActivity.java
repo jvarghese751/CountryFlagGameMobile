@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,6 +20,7 @@ public class GuessCountryActivity extends AppCompatActivity {
     private ImageView flagImageView;
     private Spinner countrySpinner;
     private Button submitGuessButton;
+    private TextView resultTextView; // TextView to display result
 
     private HashMap<String, Integer> countryFlagMap;
     private String correctCountry;
@@ -32,6 +33,7 @@ public class GuessCountryActivity extends AppCompatActivity {
         flagImageView = findViewById(R.id.flagImageView);
         countrySpinner = findViewById(R.id.countrySpinner);
         submitGuessButton = findViewById(R.id.submitGuessButton);
+        resultTextView = findViewById(R.id.resultTextView);
 
         countryFlagMap = new HashMap<>();
         countryFlagMap.put("Algeria", R.drawable.algeria);
@@ -69,9 +71,13 @@ public class GuessCountryActivity extends AppCompatActivity {
                 String selectedCountry = countrySpinner.getSelectedItem().toString();
 
                 if (selectedCountry.equals(correctCountry)) {
-                    Toast.makeText(GuessCountryActivity.this, "Correct! Well done.", Toast.LENGTH_SHORT).show();
+                    // Set the TextView to display "Correct!" message
+                    resultTextView.setText("Correct! Well done.");
+                    resultTextView.setTextColor(getResources().getColor(android.R.color.holo_green_dark));
                 } else {
-                    Toast.makeText(GuessCountryActivity.this, "Wrong! The correct answer is " + correctCountry, Toast.LENGTH_SHORT).show();
+                    // Set the TextView to display "Wrong!" message
+                    resultTextView.setText("Wrong! The correct answer is " + correctCountry);
+                    resultTextView.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
                 }
             }
         });
