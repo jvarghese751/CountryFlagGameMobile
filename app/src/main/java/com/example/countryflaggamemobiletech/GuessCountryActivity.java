@@ -2,6 +2,7 @@ package com.example.countryflaggamemobiletech;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -24,6 +25,7 @@ public class GuessCountryActivity extends AppCompatActivity {
 
     private HashMap<String, Integer> countryFlagMap;
     private String correctCountry;
+    private boolean isGuessSubmitted = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,16 +70,24 @@ public class GuessCountryActivity extends AppCompatActivity {
         submitGuessButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String selectedCountry = countrySpinner.getSelectedItem().toString();
+                if (!isGuessSubmitted) {
+                    String selectedCountry = countrySpinner.getSelectedItem().toString();
 
-                if (selectedCountry.equals(correctCountry)) {
-                    // Set the TextView to display "Correct!" message
-                    resultTextView.setText("Correct! Well done.");
-                    resultTextView.setTextColor(getResources().getColor(android.R.color.holo_green_dark));
+                    if (selectedCountry.equals(correctCountry)) {
+                        // Set the TextView to display "Correct!" message
+                        resultTextView.setText("Correct! Well done.");
+                        resultTextView.setTextColor(getResources().getColor(android.R.color.holo_green_dark));
+                    } else {
+                        // Set the TextView to display "Wrong!" message
+                        resultTextView.setText("Wrong! The correct answer is " + correctCountry);
+                        resultTextView.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+                    }
+
+                    submitGuessButton.setText("Next");
+                    isGuessSubmitted = true;
                 } else {
-                    // Set the TextView to display "Wrong!" message
-                    resultTextView.setText("Wrong! The correct answer is " + correctCountry);
-                    resultTextView.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+                    getRandomFlag();
+                    resetForNextRound();
                 }
             }
         });
@@ -89,5 +99,15 @@ public class GuessCountryActivity extends AppCompatActivity {
         correctCountry = countries.get(random.nextInt(countries.size()));
 
         flagImageView.setImageResource(countryFlagMap.get(correctCountry));
+    }
+
+    private void resetForNextRound() {
+        resultTextView.setText("");
+
+        submitGuessButton.setText("Submit");
+
+        countrySpinner.setSelection(0);
+
+        isGuessSubmitted = false;
     }
 }

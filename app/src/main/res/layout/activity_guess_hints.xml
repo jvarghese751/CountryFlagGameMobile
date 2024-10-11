@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GuessHintsActivity">
+
+    <ImageView
+        android:id="@+id/hintFlagImageView"
+        android:layout_width="237dp"
+        android:layout_height="146dp"
+        android:layout_marginTop="78dp"
+        android:layout_marginBottom="64dp"
+        android:contentDescription="Flag Image"
+        app:layout_constraintBottom_toTopOf="@+id/dashesTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/dashesTextView"
+        android:layout_width="201dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="31dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/charInputEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hintFlagImageView" />
+
+    <EditText
+        android:id="@+id/charInputEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+        android:hint="Enter a character"
+        android:inputType="text"
+        android:maxLength="1"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/submitHintButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dashesTextView" />
+
+    <Button
+        android:id="@+id/submitHintButton"
+        android:layout_width="135dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="234dp"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/charInputEditText" />
+</androidx.constraintlayout.widget.ConstraintLayout>

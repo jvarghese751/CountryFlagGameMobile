@@ -25,7 +25,8 @@ public class NewCountryGameActivity extends AppCompatActivity {
         });
 
         btnGuessHints.setOnClickListener(v -> {
-            Toast.makeText(NewCountryGameActivity.this, "Guess-Hints Selected", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(NewCountryGameActivity.this, GuessHintsActivity.class);
+            startActivity(intent);
         });
 
         btnGuessFlag.setOnClickListener(v -> {
