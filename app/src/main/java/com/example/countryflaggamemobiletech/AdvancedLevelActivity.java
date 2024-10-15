@@ -18,22 +18,17 @@ import java.util.List;
 import java.util.Random;
 
 public class AdvancedLevelActivity extends AppCompatActivity {
-    private ImageView flagImageViewAdvanced1;
-    private ImageView flagImageViewAdvanced2;
-    private ImageView flagImageViewAdvanced3;
-    private EditText countryInput1;
-    private EditText countryInput2;
-    private EditText countryInput3;
+    private ImageView flagImageViewAdvanced1, flagImageViewAdvanced2, flagImageViewAdvanced3;
+    private EditText countryInput1, countryInput2, countryInput3;
     private Button btnSubmit;
-
     private HashMap<String, Integer> countryFlagMap;
     private List<String> countries;
     private String[] correctCountries;
-    private TextView resultTextView1;
-    private TextView resultTextView2;
-    private TextView resultTextView3;
+    private TextView resultTextView1, resultTextView2, resultTextView3, messageTextView, scoreTextView;
     private int incorrectAttempts;
-    private TextView messageTextView;
+    private int score;
+    private boolean[] correctlyGuessed;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,17 +46,26 @@ public class AdvancedLevelActivity extends AppCompatActivity {
         resultTextView2 = findViewById(R.id.resultTextView2);
         resultTextView3 = findViewById(R.id.resultTextView3);
         messageTextView = findViewById(R.id.messageTextView);
+        scoreTextView = findViewById(R.id.scoreTextView);
 
         // Initialize the country and flag map
         initializeCountryFlagMap();
         loadRandomFlags();
 
         incorrectAttempts = 0;
+        score = 0;
+        correctlyGuessed = new boolean[3];
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                checkAnswers();
+                if (btnSubmit.getText().equals("Submit")) {
+                    checkAnswers();
+                } else {
+                    loadRandomFlags();
+                    btnSubmit.setText("Submit");
+                    messageTextView.setVisibility(View.GONE);
+                }
             }
         });
     }
@@ -96,6 +100,7 @@ public class AdvancedLevelActivity extends AppCompatActivity {
     private void loadRandomFlags() {
         Random random = new Random();
         correctCountries = new String[3];
+        correctlyGuessed = new boolean[3];
 
         for (int i = 0; i < 3; i++) {
             int index;
@@ -131,6 +136,7 @@ public class AdvancedLevelActivity extends AppCompatActivity {
 
     private void checkAnswers() {
         boolean allCorrect = true;
+        int correctCountThisAttempt = 0;
 
         // Check answers for each textbox
         String[] userAnswers = {
@@ -145,38 +151,30 @@ public class AdvancedLevelActivity extends AppCompatActivity {
             }
 
             if (userAnswers[i].equalsIgnoreCase(correctCountries[i])) {
-                setTextboxCorrect(i);
+                if (!correctlyGuessed[i]) {
+                    setTextboxCorrect(i);
+                    correctlyGuessed[i] = true;
+                    correctCountThisAttempt++;
+                }
             } else {
                 setTextboxIncorrect(i);
                 allCorrect = false;
             }
         }
 
+        // Update score based on correct guesses
+        score += correctCountThisAttempt;
+        updateScoreDisplay();
+
         if (allCorrect) {
             showMessage("CORRECT!", Color.GREEN);
             btnSubmit.setText("Next");
-            btnSubmit.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    loadRandomFlags();
-                    incorrectAttempts = 0;
-                    btnSubmit.setText("Submit");
-                }
-            });
         } else {
             incorrectAttempts++;
             if (incorrectAttempts >= 3) {
                 displayCorrectAnswers();
                 showMessage("WRONG!", Color.RED);
                 btnSubmit.setText("Next");
-                btnSubmit.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        loadRandomFlags();
-                        incorrectAttempts = 0;
-                        btnSubmit.setText("Submit");
-                    }
-                });
             }
         }
     }
@@ -251,5 +249,9 @@ public class AdvancedLevelActivity extends AppCompatActivity {
         resultTextView3.setText("");
 
         messageTextView.setVisibility(View.GONE);
+    }
+
+    private void updateScoreDisplay() {
+        scoreTextView.setText("Score: " + score);
     }
 }

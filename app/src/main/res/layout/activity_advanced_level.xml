@@ -10,145 +10,146 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="21dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="6dp"
         android:text="Guess the Country Names!"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/flagImageViewAdvanced1"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnSubmit"
         android:layout_width="176dp"
         android:layout_height="49dp"
-        android:layout_marginBottom="155dp"
+        android:layout_marginBottom="137dp"
         android:text="Submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/messageTextView" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/countryInput1"
         android:layout_width="0dp"
-        android:layout_height="53dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginBottom="37dp"
         android:ems="10"
         android:hint="Country for Flag 1"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="@+id/flagImageViewAdvanced1"
-        app:layout_constraintEnd_toEndOf="@+id/countryInput2"
-        app:layout_constraintStart_toEndOf="@+id/flagImageViewAdvanced1"
-        app:layout_constraintTop_toTopOf="@+id/flagImageViewAdvanced1" />
+        app:layout_constraintEnd_toEndOf="@+id/scoreTextView"
+        app:layout_constraintStart_toStartOf="@+id/countryInput2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
         android:id="@+id/countryInput2"
         android:layout_width="0dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="235dp"
-        android:layout_marginBottom="235dp"
+        android:layout_height="50dp"
         android:ems="10"
         android:hint="Country for Flag 2"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
+        app:layout_constraintBottom_toBottomOf="@+id/flagImageViewAdvanced2"
         app:layout_constraintEnd_toEndOf="@+id/countryInput3"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/flagImageViewAdvanced2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="@+id/countryInput3"
+        app:layout_constraintTop_toTopOf="@+id/flagImageViewAdvanced2" />
 
     <EditText
         android:id="@+id/countryInput3"
         android:layout_width="0dp"
-        android:layout_height="53dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="10dp"
         android:ems="10"
         android:hint="Country for Flag 3"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="@+id/flagImageViewAdvanced3"
-        app:layout_constraintStart_toEndOf="@+id/flagImageViewAdvanced3"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/flagImageViewAdvanced3" />
 
     <ImageView
         android:id="@+id/flagImageViewAdvanced1"
-        android:layout_width="198dp"
-        android:layout_height="84dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="70dp"
-        app:layout_constraintBottom_toTopOf="@+id/resultTextView1"
-        app:layout_constraintEnd_toStartOf="@+id/resultTextView1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="41dp"
+        android:layout_marginBottom="43dp"
+        app:layout_constraintBottom_toTopOf="@+id/flagImageViewAdvanced2"
+        app:layout_constraintEnd_toEndOf="@+id/flagImageViewAdvanced2"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="@+id/textView2"
         app:srcCompat="@drawable/algeria" />
 
     <ImageView
         android:id="@+id/flagImageViewAdvanced2"
-        android:layout_width="182dp"
-        android:layout_height="88dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="70dp"
-        app:layout_constraintBottom_toTopOf="@+id/resultTextView2"
-        app:layout_constraintEnd_toStartOf="@+id/resultTextView2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resultTextView1"
+        android:layout_width="0dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="200dp"
+        app:layout_constraintEnd_toEndOf="@+id/flagImageViewAdvanced3"
+        app:layout_constraintStart_toStartOf="@+id/flagImageViewAdvanced3"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/australia" />
 
     <ImageView
         android:id="@+id/flagImageViewAdvanced3"
-        android:layout_width="196dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="70dp"
-        app:layout_constraintBottom_toTopOf="@+id/resultTextView3"
-        app:layout_constraintEnd_toStartOf="@+id/resultTextView3"
+        android:layout_width="0dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="33dp"
+        app:layout_constraintBottom_toTopOf="@+id/messageTextView"
+        app:layout_constraintEnd_toStartOf="@+id/countryInput3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resultTextView2"
+        app:layout_constraintTop_toBottomOf="@+id/flagImageViewAdvanced2"
         app:srcCompat="@drawable/belgium" />
 
     <TextView
         android:id="@+id/resultTextView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="142dp"
-        android:layout_marginBottom="67dp"
-        app:layout_constraintBottom_toTopOf="@+id/flagImageViewAdvanced2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/flagImageViewAdvanced1"
-        app:layout_constraintTop_toBottomOf="@+id/flagImageViewAdvanced1" />
+        app:layout_constraintStart_toStartOf="@+id/resultTextView2"
+        app:layout_constraintTop_toBottomOf="@+id/countryInput1" />
 
     <TextView
         android:id="@+id/resultTextView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="142dp"
-        android:layout_marginBottom="54dp"
-        app:layout_constraintBottom_toTopOf="@+id/flagImageViewAdvanced3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/flagImageViewAdvanced2"
-        app:layout_constraintTop_toBottomOf="@+id/flagImageViewAdvanced2" />
+        app:layout_constraintStart_toStartOf="@+id/resultTextView3"
+        app:layout_constraintTop_toBottomOf="@+id/countryInput2" />
 
     <TextView
         android:id="@+id/resultTextView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="142dp"
-        android:layout_marginBottom="23dp"
-        app:layout_constraintBottom_toTopOf="@+id/messageTextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/flagImageViewAdvanced3"
-        app:layout_constraintTop_toBottomOf="@+id/flagImageViewAdvanced3" />
+        android:layout_marginStart="120dp"
+        android:layout_marginEnd="125dp"
+        android:layout_marginBottom="93dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
+        app:layout_constraintEnd_toEndOf="@+id/countryInput3"
+        app:layout_constraintStart_toStartOf="@+id/messageTextView" />
 
     <TextView
         android:id="@+id/messageTextView"
         android:layout_width="98dp"
         android:layout_height="29dp"
-        android:layout_marginBottom="14dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="68dp"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
+        app:layout_constraintBottom_toBottomOf="@+id/btnSubmit"
+        app:layout_constraintEnd_toEndOf="@+id/btnSubmit"
+        app:layout_constraintStart_toStartOf="@+id/btnSubmit"
+        app:layout_constraintTop_toTopOf="@+id/resultTextView3" />
+
+    <TextView
+        android:id="@+id/scoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="10dp"
+        android:text="Score: 0"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resultTextView3" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
