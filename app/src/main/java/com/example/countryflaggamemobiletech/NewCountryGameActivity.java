@@ -35,7 +35,8 @@ public class NewCountryGameActivity extends AppCompatActivity {
         });
 
         btnAdvancedLevel.setOnClickListener(v -> {
-            Toast.makeText(NewCountryGameActivity.this, "Advanced Level Selected", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(NewCountryGameActivity.this, AdvancedLevelActivity.class);
+            startActivity(intent);
         });
     }
 }
