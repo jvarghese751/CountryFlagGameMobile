@@ -30,7 +30,8 @@ public class NewCountryGameActivity extends AppCompatActivity {
         });
 
         btnGuessFlag.setOnClickListener(v -> {
-            Toast.makeText(NewCountryGameActivity.this, "Guess the Flag Selected", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(NewCountryGameActivity.this, GuessFlagActivity.class);
+            startActivity(intent);
         });
 
         btnAdvancedLevel.setOnClickListener(v -> {

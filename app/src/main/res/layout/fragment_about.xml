@@ -10,13 +10,13 @@
         android:id="@+id/aboutTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:padding="24dp"
-        android:text="Student ID: B00879477\n\nStudent Name: Joel Varghese.\n\nI confirm that I understand what plagiarism is and have read the University’s policy on plagiarism and understand the definition of plagiarism. The work that I have submitted is entirely my own. Any work from other authors is duly referenced and acknowledged. I understand that I may face sanctions in accordance with the policies and procedures of the University."
-        android:textSize="18sp"
-        android:lineSpacingExtra="6dp"
-        android:textColor="#333333"
+        android:layout_gravity="bottom|center"
         android:background="#FFFFFF"
+        android:elevation="4dp"
+        android:lineSpacingExtra="6dp"
+        android:padding="24dp"
         android:paddingHorizontal="16dp"
-        android:elevation="4dp" />
+        android:text="Student ID: B00879477\n\nStudent Name: Joel Varghese.\n\nI confirm that I understand what plagiarism is and have read the University’s policy on plagiarism and understand the definition of plagiarism. The work that I have submitted is entirely my own. Any work from other authors is duly referenced and acknowledged. I understand that I may face sanctions in accordance with the policies and procedures of the University."
+        android:textColor="#333333"
+        android:textSize="18sp" />
 </FrameLayout>

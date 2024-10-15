@@ -3,7 +3,10 @@ package com.example.countryflaggamemobiletech;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.text.TextUtils;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,6 +28,8 @@ public class GuessHintsActivity extends AppCompatActivity {
     private HashMap<String, Integer> countryFlagMap; // Map of country names and their flags
     private String correctCountry;  // The correct country for the current flag
     private StringBuilder currentDashes;  // Dashes corresponding to the country name
+    private int incorrectGuesses;
+    private boolean gameEnded;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,15 +69,19 @@ public class GuessHintsActivity extends AppCompatActivity {
         submitHintButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String inputChar = charInputEditText.getText().toString().trim();
-                if (TextUtils.isEmpty(inputChar)) {
-                    Toast.makeText(GuessHintsActivity.this, "Please enter a character", Toast.LENGTH_SHORT).show();
-                    return;
+                String buttonText = submitHintButton.getText().toString();
+                if (buttonText.equals("Next")) {
+                    startNewHintGame();
+                } else {
+                    String inputChar = charInputEditText.getText().toString().trim();
+                    if (TextUtils.isEmpty(inputChar)) {
+                        Toast.makeText(GuessHintsActivity.this, "Please enter a character", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
+                    charInputEditText.setText("");
+                    checkCharacter(inputChar.toLowerCase());
                 }
-
-                charInputEditText.setText("");
-
-                checkCharacter(inputChar.toLowerCase());
             }
         });
     }
@@ -94,6 +103,17 @@ public class GuessHintsActivity extends AppCompatActivity {
         }
 
         dashesTextView.setText((currentDashes.toString()));
+
+        // Reset incorrect guesses
+        incorrectGuesses = 0;
+
+        // Clear any previous result message
+        TextView resultTextViewGH = findViewById(R.id.resultTextViewGH);
+        resultTextViewGH.setText("");
+
+        // Reset the button text to "Submit"
+        submitHintButton.setText("Submit");
+        submitHintButton.setEnabled(true);
     }
 
     private void checkCharacter(String inputChar) {
@@ -109,8 +129,46 @@ public class GuessHintsActivity extends AppCompatActivity {
 
         dashesTextView.setText(currentDashes.toString());
 
+        TextView resultTextViewGH = findViewById(R.id.resultTextViewGH);
+
         if (!charFound) {
-            Toast.makeText(this, "Character not found!", Toast.LENGTH_SHORT).show();
+            incorrectGuesses++;
+            if (incorrectGuesses >= 3) {
+                // Create a spannable string to style "WRONG!" and the country name separately
+                String message = "WRONG! The correct country is: " + correctCountry;
+                SpannableString spannableMessage = new SpannableString(message);
+
+                // Apply red color to the "WRONG!" part
+                spannableMessage.setSpan(
+                        new ForegroundColorSpan(getResources().getColor(android.R.color.holo_red_dark)),
+                        0, 6,  // Range covering "WRONG!"
+                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                );
+
+                // Apply blue color to the country name part
+                spannableMessage.setSpan(
+                        new ForegroundColorSpan(getResources().getColor(android.R.color.holo_blue_dark)),
+                        29, message.length(),  // Range covering the country name
+                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                );
+
+                // Set the styled text to the TextView
+                resultTextViewGH.setText(spannableMessage);
+
+                submitHintButton.setText("Next");
+                gameEnded = true;
+            } else {
+                Toast.makeText(this, "Character not found! Attempts left: " + (3 - incorrectGuesses), Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            // Check if the user has guessed the entire country name
+            if (currentDashes.toString().equals(correctCountry)) {
+                resultTextViewGH.setText("CORRECT!");
+                resultTextViewGH.setTextColor(getResources().getColor(android.R.color.holo_green_dark));
+
+                submitHintButton.setText("Next");
+                gameEnded = true;
+            }
         }
     }
 }
