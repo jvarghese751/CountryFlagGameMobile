@@ -8,10 +8,10 @@
 
     <ImageView
         android:id="@+id/flagImageView3"
-        android:layout_width="170dp"
+        android:layout_width="113dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="21dp"
-        app:layout_constraintBottom_toTopOf="@+id/countryNameTextView"
+        android:layout_marginBottom="83dp"
+        app:layout_constraintBottom_toTopOf="@+id/resultTextViewGF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/flagImageView2"
@@ -19,9 +19,9 @@
 
     <ImageView
         android:id="@+id/flagImageView2"
-        android:layout_width="170dp"
+        android:layout_width="165dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="22dp"
+        android:layout_marginBottom="14dp"
         app:layout_constraintBottom_toTopOf="@+id/flagImageView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,10 +30,10 @@
 
     <ImageView
         android:id="@+id/flagImageView1"
-        android:layout_width="170dp"
+        android:layout_width="153dp"
         android:layout_height="0dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginBottom="22dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="17dp"
         app:layout_constraintBottom_toTopOf="@+id/flagImageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,32 +44,35 @@
         android:id="@+id/countryNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="13dp"
         android:text="Country Name"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/resultTextViewGF"
-        app:layout_constraintEnd_toStartOf="@+id/resultTextViewGF"
-        app:layout_constraintStart_toStartOf="@+id/resultTextViewGF"
-        app:layout_constraintTop_toBottomOf="@+id/flagImageView3" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/resultTextViewGF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="57dp"
+        android:layout_marginBottom="24dp"
         android:text=""
-        android:textSize="16sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/nextButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/countryNameTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/flagImageView3" />
 
     <Button
         android:id="@+id/nextButton"
         android:layout_width="146dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="146dp"
+        android:layout_marginBottom="185dp"
+        android:backgroundTint="#388E3C"
         android:text="Next"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

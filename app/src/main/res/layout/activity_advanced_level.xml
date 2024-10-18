@@ -8,12 +8,12 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="307dp"
+        android:layout_height="34dp"
         android:layout_marginStart="9dp"
         android:layout_marginTop="6dp"
         android:text="Guess the Country Names!"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,7 +23,10 @@
         android:layout_width="176dp"
         android:layout_height="49dp"
         android:layout_marginBottom="137dp"
+        android:backgroundTint="#388E3C"
         android:text="Submit"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -147,7 +150,7 @@
         android:layout_marginTop="9dp"
         android:layout_marginEnd="10dp"
         android:text="Score: 0"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

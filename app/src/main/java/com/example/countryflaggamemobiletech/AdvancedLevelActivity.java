@@ -2,6 +2,7 @@ package com.example.countryflaggamemobiletech;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;

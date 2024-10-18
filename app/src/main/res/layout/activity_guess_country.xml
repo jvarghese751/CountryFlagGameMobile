@@ -8,40 +8,42 @@
 
     <Spinner
         android:id="@+id/countrySpinner"
-        android:layout_width="230dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="143dp"
-        app:layout_constraintBottom_toTopOf="@+id/submitGuessButton"
+        android:layout_width="201dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/resultTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/flagImageView" />
 
     <Button
         android:id="@+id/submitGuessButton"
-        android:layout_width="209dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="49dp"
+        android:layout_width="206dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="279dp"
+        android:backgroundTint="#388E3C"
         android:text="Submit"
         android:textColorHighlight="#4CAF50"
         android:textColorLink="#8BC34A"
-        app:layout_constraintBottom_toTopOf="@+id/resultTextView"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/countrySpinner"
+        app:layout_constraintTop_toBottomOf="@+id/resultTextView"
         tools:ignore="HardcodedText" />
 
     <ImageView
         android:id="@+id/flagImageView"
-        android:layout_width="276dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="82dp"
-        android:layout_marginBottom="39dp"
+        android:layout_width="253dp"
+        android:layout_height="139dp"
+        android:layout_marginBottom="22dp"
         android:contentDescription="Random Flag"
         app:layout_constraintBottom_toTopOf="@+id/countrySpinner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:srcCompat="@drawable/algeria"
         tools:ignore="HardcodedText" />
 
@@ -49,13 +51,30 @@
         android:id="@+id/resultTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="88dp"
+        android:layout_marginBottom="10dp"
         android:text=""
         android:textColor="#FF0000"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/submitGuessButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/countrySpinner" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="17dp"
+        android:text="Guess the Country!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/flagImageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/submitGuessButton" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
