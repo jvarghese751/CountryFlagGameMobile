@@ -141,11 +141,25 @@ public class AdvancedLevelActivity extends AppCompatActivity {
 
         // Check answers for each textbox
         String[] userAnswers = {
-                countryInput1.getText().toString().trim(),
-                countryInput2.getText().toString().trim(),
+                countryInput1.getText().toString().trim(), countryInput2.getText().toString().trim(),
                 countryInput3.getText().toString().trim()
         };
 
+        // Check if any input is empty and not yet correctly guessed
+        if (TextUtils.isEmpty(userAnswers[0]) && !correctlyGuessed[0]) {
+            showMessage("Please enter the country for the first flag.", Color.RED);
+            return; // Stop further execution
+        }
+        if (TextUtils.isEmpty(userAnswers[1]) && !correctlyGuessed[1]) {
+            showMessage("Please enter the country for the second flag.", Color.RED);
+            return; // Stop further execution
+        }
+        if (TextUtils.isEmpty(userAnswers[2]) && !correctlyGuessed[2]) {
+            showMessage("Please enter the country for the third flag.", Color.RED);
+            return; // Stop further execution
+        }
+
+        // Check answers for each textbox
         for (int i = 0; i < 3; i++) {
             if (TextUtils.isEmpty(userAnswers[i])) {
                 continue; // Skip empty inputs
@@ -234,21 +248,26 @@ public class AdvancedLevelActivity extends AppCompatActivity {
     }
 
     private void resetTextboxes() {
+        // Reset all input fields, including countryInput3
         countryInput1.setText("");
         countryInput2.setText("");
-        countryInput3.setText("");
+        countryInput3.setText(""); // Clear countryInput3
+
+        // Enable and reset background colors
         countryInput1.setEnabled(true);
         countryInput2.setEnabled(true);
-        countryInput3.setEnabled(true);
+        countryInput3.setEnabled(true); // Reset and enable countryInput3
+
         countryInput1.setBackgroundColor(Color.WHITE);
         countryInput2.setBackgroundColor(Color.WHITE);
-        countryInput3.setBackgroundColor(Color.WHITE);
+        countryInput3.setBackgroundColor(Color.WHITE); // Reset background color for countryInput3
 
         // Clear result TextViews
         resultTextView1.setText("");
         resultTextView2.setText("");
         resultTextView3.setText("");
 
+        // Hide message text
         messageTextView.setVisibility(View.GONE);
     }
 
