@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         btnNewCountryGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // When the button is clicked, start a new activity for the country game.
                 Intent intent = new Intent(MainActivity.this, NewCountryGameActivity.class);
                 startActivity(intent);
             }
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         btnAbout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Placeholder code for About
+                // When the button is clicked, show the About fragment.
                 showAboutFragment();
             }
         });

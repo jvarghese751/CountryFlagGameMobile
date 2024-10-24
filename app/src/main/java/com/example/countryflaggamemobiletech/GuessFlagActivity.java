@@ -94,6 +94,7 @@ public class GuessFlagActivity extends AppCompatActivity {
     private void startNewFlagGame() {
         Random random = new Random();
         List<String> chosenCountries = new ArrayList<>();
+        // Randomly select 3 unique countries for the current round
         while (chosenCountries.size() <3) {
             String country = countryList.get(random.nextInt(countryList.size()));
             if (!chosenCountries.contains(country)) {
@@ -101,13 +102,16 @@ public class GuessFlagActivity extends AppCompatActivity {
             }
         }
 
+        // randomly select the correct country from the three chosen countries
         correctCountry = chosenCountries.get(random.nextInt(3));
         countryNameTextView.setText(correctCountry);
 
+        // set flag images for each ImageView
         flagImageView1.setImageResource(countryFlagMap.get(chosenCountries.get(0)));
         flagImageView2.setImageResource(countryFlagMap.get(chosenCountries.get(1)));
         flagImageView3.setImageResource(countryFlagMap.get(chosenCountries.get(2)));
 
+        // show which ImageView contains the correct flag and store its ID
         if (chosenCountries.get(0).equals(correctCountry)) {
             correctImageViewId = R.id.flagImageView1;
         } else if (chosenCountries.get(1).equals(correctCountry)) {
@@ -116,19 +120,24 @@ public class GuessFlagActivity extends AppCompatActivity {
             correctImageViewId = R.id.flagImageView3;
         }
 
+        // Reset the result TextView and disable the "Next" button until the user selects a flag
         resultTextViewGF.setText("");
         nextButton.setEnabled(false);
     }
 
+    // Method to check if the selected flag matches the correct flag
     private void checkFlagSelection(int selectedImageViewId) {
         if (selectedImageViewId == correctImageViewId) {
+            // If the selected flag matches the correct flag
             resultTextViewGF.setText("CORRECT!");
             resultTextViewGF.setTextColor(getResources().getColor(android.R.color.holo_green_dark));
         } else {
+            // If the selected flag is incorrect
             resultTextViewGF.setText("WRONG!");
             resultTextViewGF.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
         }
 
+        // Enable the "Next" button to allow the user to start a new game
         nextButton.setEnabled(true);
     }
 }

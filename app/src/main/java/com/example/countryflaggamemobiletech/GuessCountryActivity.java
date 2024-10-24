@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -78,9 +81,28 @@ public class GuessCountryActivity extends AppCompatActivity {
                         resultTextView.setText("Correct! Well done.");
                         resultTextView.setTextColor(getResources().getColor(android.R.color.holo_green_dark));
                     } else {
-                        // Set the TextView to display "Wrong!" message
-                        resultTextView.setText("Wrong! The correct answer is " + correctCountry);
-                        resultTextView.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+                        // Incorrect answer: show "Wrong!" message in red and the correct country in blue
+                        String wrongMessage = "Wrong! The correct answer is ";
+                        String fullMessage = wrongMessage + correctCountry;
+
+                        // Create a SpannableString for the message
+                        SpannableString spannableMessage = new SpannableString(fullMessage);
+
+                        // Set "Wrong!" in red
+                        spannableMessage.setSpan(
+                                new ForegroundColorSpan(getResources().getColor(android.R.color.holo_red_dark)),
+                                0, wrongMessage.length(),
+                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                        );
+
+                        // Set correct country in blue
+                        spannableMessage.setSpan(
+                                new ForegroundColorSpan(getResources().getColor(android.R.color.holo_blue_dark)),
+                                wrongMessage.length(), fullMessage.length(),
+                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                        );
+
+                        resultTextView.setText(spannableMessage);
                     }
 
                     submitGuessButton.setText("Next");
