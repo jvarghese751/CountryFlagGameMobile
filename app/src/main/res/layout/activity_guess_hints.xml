@@ -6,36 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".GuessHintsActivity">
 
-    <ImageView
-        android:id="@+id/hintFlagImageView"
-        android:layout_width="239dp"
-        android:layout_height="108dp"
-        android:layout_marginTop="59dp"
-        android:layout_marginBottom="23dp"
-        android:contentDescription="Flag Image"
-        app:layout_constraintBottom_toTopOf="@+id/resultTextViewGH"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/dashesTextView"
-        android:layout_width="201dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="24dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/charInputEditText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resultTextViewGH" />
-
     <EditText
         android:id="@+id/charInputEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="39dp"
+        android:layout_marginBottom="29dp"
         android:ems="10"
         android:hint="Enter a character"
         android:inputType="text"
@@ -46,11 +21,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dashesTextView" />
 
+    <ImageView
+        android:id="@+id/hintFlagImageView"
+        android:layout_width="230dp"
+        android:layout_height="149dp"
+        android:layout_marginBottom="7dp"
+        android:contentDescription="Flag Image"
+        app:layout_constraintBottom_toTopOf="@+id/resultTextViewGH"
+        app:layout_constraintEnd_toStartOf="@+id/resultTextViewGH"
+        app:layout_constraintStart_toStartOf="@+id/resultTextViewGH"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/dashesTextView"
+        android:layout_width="201dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="33dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/charInputEditText"
+        app:layout_constraintEnd_toStartOf="@+id/resultTextViewGH"
+        app:layout_constraintStart_toStartOf="@+id/resultTextViewGH"
+        app:layout_constraintTop_toBottomOf="@+id/resultTextViewGH" />
+
     <Button
         android:id="@+id/submitHintButton"
         android:layout_width="135dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="233dp"
+        android:layout_marginBottom="240dp"
         android:backgroundTint="#388E3C"
         android:text="Submit"
         android:textSize="20sp"
@@ -64,12 +63,25 @@
         android:id="@+id/resultTextViewGH"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="19dp"
+        android:layout_marginBottom="14dp"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/dashesTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hintFlagImageView" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="Guess the Hints"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/hintFlagImageView"
+        app:layout_constraintStart_toStartOf="@+id/hintFlagImageView"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

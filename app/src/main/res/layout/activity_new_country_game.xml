@@ -11,7 +11,6 @@
         android:id="@+id/btnGuessCountry"
         android:layout_width="221dp"
         android:layout_height="0dp"
-        android:layout_marginTop="155dp"
         android:layout_marginBottom="15dp"
         android:backgroundTint="#FF5722"
         android:text="Guess the Country"
@@ -20,7 +19,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btnGuessHints"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <Button
         android:id="@+id/btnGuessHints"
@@ -33,7 +32,6 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnGuessFlag"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnGuessCountry" />
 
@@ -41,7 +39,7 @@
         android:id="@+id/btnGuessFlag"
         android:layout_width="185dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="11dp"
+        android:layout_marginBottom="12dp"
         android:backgroundTint="#FF5722"
         android:text="Guess the Flag"
         android:textSize="20sp"
@@ -55,7 +53,7 @@
         android:id="@+id/btnAdvancedLevel"
         android:layout_width="197dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="311dp"
+        android:layout_marginBottom="310dp"
         android:backgroundTint="#FF5722"
         android:text="Advanced Level"
         android:textSize="20sp"
@@ -64,4 +62,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnGuessFlag" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="53dp"
+        android:layout_marginBottom="70dp"
+        android:text="New Country Game!"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnGuessCountry"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
